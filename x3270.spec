@@ -7,7 +7,7 @@ Group:		X11/Applications
 Source:		ftp://ftp.x.org/contrib/applications/x3270/%{name}-%{version}.tar.gz
 Patch:		x3270-3.1.1.6-glibc.patch
 Prereq:		/usr/X11R6/bin/mkfontdir
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_fontdir	/usr/share/fonts
 %define		_prefix		/usr/X11R6
