@@ -74,22 +74,22 @@ rm -rf $RPM_BUILD_ROOT
 %dir	%{_datadir}/x3270
 %config	%{_datadir}/x3270/ibm_hosts
 %attr(755,root,root) %{_bindir}/x3270
-%{_fontsdir}/misc/3270.pcf.gz     
-%{_fontsdir}/misc/3270b.pcf.gz               
-%{_fontsdir}/misc/3270-12.pcf.gz  
+%{_fontsdir}/misc/3270.pcf.gz
+%{_fontsdir}/misc/3270b.pcf.gz
+%{_fontsdir}/misc/3270-12.pcf.gz
 %{_fontsdir}/misc/3270-12b.pcf.gz
-%{_fontsdir}/misc/3270-20.pcf.gz  
-%{_fontsdir}/misc/3270-20b.pcf.gz                   
-%{_fontsdir}/misc/3270d.pcf.gz             
-%{_fontsdir}/misc/3270h.pcf.gz             
-%{_fontsdir}/misc/3270gt8.pcf.gz                   
-%{_fontsdir}/misc/3270gt12.pcf.gz 
+%{_fontsdir}/misc/3270-20.pcf.gz
+%{_fontsdir}/misc/3270-20b.pcf.gz
+%{_fontsdir}/misc/3270d.pcf.gz
+%{_fontsdir}/misc/3270h.pcf.gz
+%{_fontsdir}/misc/3270gt8.pcf.gz
+%{_fontsdir}/misc/3270gt12.pcf.gz
 %{_fontsdir}/misc/3270gt12b.pcf.gz
-%{_fontsdir}/misc/3270gt16.pcf.gz 
-%{_fontsdir}/misc/3270gt16b.pcf.gz                  
+%{_fontsdir}/misc/3270gt16.pcf.gz
+%{_fontsdir}/misc/3270gt16b.pcf.gz
 %{_fontsdir}/misc/3270gt24.pcf.gz
-%{_fontsdir}/misc/3270gt24b.pcf.gz                  
-%{_fontsdir}/misc/3270gt32.pcf.gz 
+%{_fontsdir}/misc/3270gt24b.pcf.gz
+%{_fontsdir}/misc/3270gt32.pcf.gz
 %{_fontsdir}/misc/3270gt32b.pcf.gz
 %{_mandir}/man1/x3270.1x*
 %{_mandir}/man1/x3270-script.1x*
