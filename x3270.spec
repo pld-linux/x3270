@@ -5,7 +5,7 @@ Version:	3.1.1.6
 Release:	7
 License:	MIT
 Group:		X11/Applications
-Source0:	ftp://ftp.x.org/contrib/applications/x3270/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{version}.tar.gz
 Patch0:		%{name}-3.1.1.6-glibc.patch
 Prereq:		/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
