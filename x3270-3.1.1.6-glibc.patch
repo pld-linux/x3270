@@ -1,0 +1,22 @@
+--- x3270-3.1.0/popups.c.ewt	Thu Aug 29 15:06:58 1996
++++ x3270-3.1.0/popups.c	Thu Aug 29 15:07:08 1996
+@@ -502,7 +502,7 @@
+ 	va_list args;
+ 	char *s;
+ 	extern int sys_nerr;
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__GNU_LIBRARY__)
+ 	extern char *sys_errlist[];
+ #endif
+ 
+--- x3270-3.1.1/util.c~	Wed Apr 24 13:59:03 1996
++++ x3270-3.1.1/util.c	Wed Oct 22 18:50:27 1997
+@@ -586,7 +586,7 @@
+ int e;
+ {
+ 	extern int sys_nerr;
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__GNU_LIBRARY__)
+ 	extern char *sys_errlist[];
+ #endif
+ 
