@@ -1,11 +1,11 @@
 Summary:	An X Window System based IBM 3278/3279 terminal emulator
-Summary(de): X-basierter 3270-Emulator
-Summary(fr): Emulateur 3270 pour X
+Summary(de):	X-basierter 3270-Emulator
+Summary(fr):	Emulateur 3270 pour X
 Summary(pl):	Emulator terminala IBM 3278/3279 pod X Window System
-Summary(ru): Эмулятор терминала IBM 3278/3279 для X Window
-Summary(tr): X tabanlЩ 3270 ЖykЭnЭmcЭsЭ
-Summary(uk): Емулятор терм╕налу IBM 3278/3279 для X Window
-Summary(zh_CN): р╩╦ЖдёдБ IBM 3278/3279 жу╤к╣д X ╢╟©зо╣мЁ.ё
+Summary(ru):	Эмулятор терминала IBM 3278/3279 для X Window
+Summary(tr):	X tabanlЩ 3270 ЖykЭnЭmcЭsЭ
+Summary(uk):	Емулятор терм╕налу IBM 3278/3279 для X Window
+Summary(zh_CN):	р╩╦ЖдёдБ IBM 3278/3279 жу╤к╣д X ╢╟©зо╣мЁ.ё
 Name:		x3270
 Version:	3.1.1.9
 Release:	1
@@ -13,7 +13,7 @@ License:	MIT
 Group:		X11/Applications
 Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{version}.tgz
 BuildRequires:	XFree86-devel
-Requires(post,postun):	/usr/X11R6/bin/mkfontdir
+Requires(post,postun):/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -30,8 +30,8 @@ Dieses Programm emuliert ein IBM 3270-Terminal, das Эblicherweise mit
 Mainframe-Anwendungen in einem X-Fenster ausgefЭhrt wird.
 
 %description -l fr
-Ce programme Иmule un terminal IBM 3270, couramment utilisИ sous X window
-avec les gros systХmes.
+Ce programme Иmule un terminal IBM 3270, couramment utilisИ sous X
+window avec les gros systХmes.
 
 %description -l pl
 Program x3270 otwiera okienko pod X, ktСre emuluje wЁa╤ciwy wygl╠d
@@ -40,12 +40,12 @@ x3270 pozwala tak©e zatelnetowaФ siЙ na maszynЙ IBM z okienka x3270.
 
 %description -l ru
 Программа x3270 открывает окно в X Window System, эмулирующее вид
-терминала IBM 3278/3279, часто используемого в мейнфреймах, и позволяющее
-"telnet-ится" на хосты IBM.
+терминала IBM 3278/3279, часто используемого в мейнфреймах, и
+позволяющее "telnet-ится" на хосты IBM.
 
 %description -l tr
-Bu program IBM 3270 uГbirim ЖykЭnЭmЭ yapar. IBM 3270 ЖykЭnЭmЭ bazЩ eski
-bilgisayar sistemlerine baПlanmak iГin gerekebilir.
+Bu program IBM 3270 uГbirim ЖykЭnЭmЭ yapar. IBM 3270 ЖykЭnЭmЭ bazЩ
+eski bilgisayar sistemlerine baПlanmak iГin gerekebilir.
 
 %description -l uk
 Програма x3270 в╕дкрива╓ в╕кно в X Window System, яке емулю╓ вид
