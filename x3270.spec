@@ -6,9 +6,12 @@ Release:	7
 License:	MIT
 Group:		X11/Applications
 Group(de):	X11/Applikationen
+Group(es):	X11/Aplicaciones
 Group(pl):	X11/Aplikacje
-Source:		ftp://ftp.x.org/contrib/applications/x3270/%{name}-%{version}.tar.gz
-Patch:		%{name}-3.1.1.6-glibc.patch
+Group(pt_BR):	X11/Aplicações
+Group(pt):	X11/Aplicações
+Source0:	ftp://ftp.x.org/contrib/applications/x3270/%{name}-%{version}.tar.gz
+Patch0:		%{name}-3.1.1.6-glibc.patch
 Prereq:		/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -18,11 +21,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 The x3270 program opens a window in the X Window System which emulates
 the actual look of an IBM 3278/3279 terminal, commonly used with
-mainframe applications.  x3270 also allows you to telnet to an IBM host
+mainframe applications. x3270 also allows you to telnet to an IBM host
 from the x3270 window.
 
-Install the x3270 package if you need to access IBM hosts using an
-IBM 3278/3279 terminal emulator.
+Install the x3270 package if you need to access IBM hosts using an IBM
+3278/3279 terminal emulator.
+
+%description -l pl
+Program x3270 otwiera okienko pod X, które emuluje w³a¶ciwy wygl±d
+terminala IBM 3278/3279, u¿ywanego g³ównie z aplikacjami mainframe.
+x3270 pozwala tak¿e ztelnetowaæ siê na maszynê IBM z okienka x3270.
 
 %prep
 %setup -q -n x3270-3.1.1
@@ -37,7 +45,7 @@ xmkmf
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}/X11/app-defaults
-install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig
 
 %{__make} install install.man DESTDIR=$RPM_BUILD_ROOT \
 	LIBX3270DIR=%{_datadir}/%{name} \
@@ -47,7 +55,7 @@ install X3270.xad $RPM_BUILD_ROOT%{_libdir}/X11/app-defaults/X3270
 
 gzip -9nf Docs/*
 
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/x3270 <<EOF
+cat > $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig/x3270 <<EOF
 x3270 name "x3270"
 x3270 description "3270 Terminal Emulator"
 x3270 group Networking
@@ -66,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Docs/*
-%config /etc/X11/wmconfig/x3270
+%config %{_sysconfdir}/X11/wmconfig/x3270
 %config %{_libdir}/X11/app-defaults/X3270
 %dir	%{_datadir}/x3270
 %config	%{_datadir}/x3270/ibm_hosts
