@@ -28,7 +28,7 @@ IBM 3278/3279 terminal emulator.
 
 %build
 xmkmf
-make CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
+%{__make} CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
 	CDEBUGFLAGS="$RPM_OPT_FLAGS" \
 	LIBX3270DIR=%{_datadir}/%{name}
 
@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}/X11/app-defaults
 install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 
-make install install.man DESTDIR=$RPM_BUILD_ROOT \
+%{__make} install install.man DESTDIR=$RPM_BUILD_ROOT \
 	LIBX3270DIR=%{_datadir}/%{name} \
 	MKFONTDIR=mkfontdir
 install X3270.xad $RPM_BUILD_ROOT%{_libdir}/X11/app-defaults/X3270
