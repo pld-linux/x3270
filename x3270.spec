@@ -12,6 +12,7 @@ Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{version}.tgz
+# Source0-md5:	a629c31359bf4533224f13fd8bc7cb83
 BuildRequires:	XFree86-devel
 Requires(post,postun):/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
