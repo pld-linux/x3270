@@ -36,7 +36,7 @@ avec les gros systèmes.
 %description -l pl
 Program x3270 otwiera okienko pod X, które emuluje w³a¶ciwy wygl±d
 terminala IBM 3278/3279, u¿ywanego g³ównie z aplikacjami mainframe.
-x3270 pozwala tak¿e ztelnetowaæ siê na maszynê IBM z okienka x3270.
+x3270 pozwala tak¿e zatelnetowaæ siê na maszynê IBM z okienka x3270.
 
 %description -l ru
 ğÒÏÇÒÁÍÍÁ x3270 ÏÔËÒÙ×ÁÅÔ ÏËÎÏ × X Window System, ÜÍÕÌÉÒÕÀİÅÅ ×ÉÄ
