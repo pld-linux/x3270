@@ -5,7 +5,7 @@ Summary(pl):	Emulator terminala IBM 3278/3279 pod X Window System
 Summary(ru): Эмулятор терминала IBM 3278/3279 для X Window
 Summary(tr): X tabanlЩ 3270 ЖykЭnЭmcЭsЭ
 Summary(uk): Емулятор терм╕налу IBM 3278/3279 для X Window
-Summary(zh_CN): р╩╦ЖдёдБ IBM 3278/3279 жу╤к╣д X ╢╟©зо╣мЁ.ё 
+Summary(zh_CN): р╩╦ЖдёдБ IBM 3278/3279 жу╤к╣д X ╢╟©зо╣мЁ.ё
 Name:		x3270
 Version:	3.1.1.9
 Release:	1
