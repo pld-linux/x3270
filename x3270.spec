@@ -13,7 +13,7 @@ Version:	3.3.3b2
 Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{fversion}.tgz
+Source0:	http://x3270.bgp.nu/download/%{name}-%{fversion}.tgz
 # Source0-md5:	b991b7352ae4f6b4004c85fc1c0db47f
 Source1:	%{name}.desktop
 BuildRequires:	XFree86
