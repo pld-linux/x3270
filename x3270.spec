@@ -1,3 +1,5 @@
+%define		fversion	%(echo %{version} |tr -d .)
+%define		mversion	%(echo %{version} |cut -f -2 -d .)
 Summary:	An X Window System based IBM 3278/3279 terminal emulator
 Summary(de):	X-basierter 3270-Emulator
 Summary(fr):	Emulateur 3270 pour X
@@ -7,19 +9,17 @@ Summary(tr):	X tabanlý 3270 öykünümcüsü
 Summary(uk):	åÍÕÌÑÔÏÒ ÔÅÒÍ¦ÎÁÌÕ IBM 3278/3279 ÄÌÑ X Window
 Summary(zh_CN):	Ò»¸öÄ£Äâ IBM 3278/3279 ÖÕ¶ËµÄ X ´°¿ÚÏµÍ³.£
 Name:		x3270
-Version:	3.1.1.9
+Version:	3.3.3b2
 Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{version}.tgz
-# Source0-md5:	a629c31359bf4533224f13fd8bc7cb83
+Source0:	ftp://ftp.x.org/contrib/applications/%{name}-%{fversion}.tgz
+# Source0-md5:	b991b7352ae4f6b4004c85fc1c0db47f
+Source1:	%{name}.desktop
 BuildRequires:	XFree86
 BuildRequires:	XFree86-devel
 Requires(post,postun):/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 The x3270 program opens a window in the X Window System which emulates
@@ -55,37 +55,26 @@ eski bilgisayar sistemlerine baðlanmak için gerekebilir.
 ÄÏÚ×ÏÌÑ¤ "telnet-ÉÔÉÓÑ" ÎÁ ÈÏÓÔÉ IBM.
 
 %prep
-%setup -q -n x3270-3.1.1
+%setup -q -n %{name}-%{mversion}
 
 %build
-xmkmf
-# "LIB" is misleading - LIBX3270DIR contains only ibm_hosts configuration file
-%{__make} CXXDEBUGFLAGS="%{rpmcflags}" \
-	CDEBUGFLAGS="%{rpmcflags}" \
-	LIBX3270DIR=%{_sysconfdir}/%{name}
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir}/X11/app-defaults,%{_applnkdir}/Network,%{_mandir}/man5}
+install -d $RPM_BUILD_ROOT{%{_libdir}/X11/app-defaults,%{_desktopdir},%{_mandir}/man5}
 
 %{__make} install install.man \
-	DESTDIR=$RPM_BUILD_ROOT \
-	LIBX3270DIR=%{_sysconfdir}/%{name} \
-	MKFONTDIR=mkfontdir
+	BINDIR=%{_bindir} \
+	MANDIR=%{_mandir} \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install X3270.xad $RPM_BUILD_ROOT%{_libdir}/X11/app-defaults/X3270
 
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Network/x3270.desktop <<EOF
-[Desktop Entry]
-Name=x3270
-Type=Application
-Comment=3270 Terminal Emulator
-Comment[pl]=Emulator Terminala 3270
-Exec=x3270
-Terminal=false
-EOF
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
-mv -f $RPM_BUILD_ROOT%{_mandir}/man{1/ibm_hosts.1x,5/ibm_hosts.5x}
+mv -f $RPM_BUILD_ROOT%{_mandir}/{x3270.1*,man1}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -98,31 +87,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Docs/*
+#%doc Docs/*
 %attr(755,root,root) %{_bindir}/x3270
 %attr(755,root,root) %{_bindir}/x3270if
+%attr(755,root,root) %{_bindir}/pr3287
 %dir %{_sysconfdir}/x3270
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/x3270/ibm_hosts
-%{_applnkdir}/Network/x3270.desktop
+%{_desktopdir}/%{name}.desktop
 %config %{_libdir}/X11/app-defaults/X3270
-%{_fontsdir}/misc/3270.pcf.gz
-%{_fontsdir}/misc/3270b.pcf.gz
-%{_fontsdir}/misc/3270-12.pcf.gz
-%{_fontsdir}/misc/3270-12b.pcf.gz
-%{_fontsdir}/misc/3270-20.pcf.gz
-%{_fontsdir}/misc/3270-20b.pcf.gz
-%{_fontsdir}/misc/3270d.pcf.gz
-%{_fontsdir}/misc/3270h.pcf.gz
-%{_fontsdir}/misc/3270gt8.pcf.gz
-%{_fontsdir}/misc/3270gt12.pcf.gz
-%{_fontsdir}/misc/3270gt12b.pcf.gz
-%{_fontsdir}/misc/3270gt16.pcf.gz
-%{_fontsdir}/misc/3270gt16b.pcf.gz
-%{_fontsdir}/misc/3270gt24.pcf.gz
-%{_fontsdir}/misc/3270gt24b.pcf.gz
-%{_fontsdir}/misc/3270gt32.pcf.gz
-%{_fontsdir}/misc/3270gt32b.pcf.gz
-%{_mandir}/man1/x3270.1x*
-%{_mandir}/man1/x3270if.1x*
-%{_mandir}/man1/x3270-script.1x*
-%{_mandir}/man5/ibm_hosts.5x*
+%{_fontsdir}/misc/3270*.pcf.gz
+#%{_mandir}/man1/x3270.1*
+%{_mandir}/man?/*
