@@ -21,6 +21,8 @@ BuildRequires:	XFree86-devel
 Requires(post,postun):/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_appdefsdir	/usr/X11R6/lib/X11/app-defaults
+
 %description
 The x3270 program opens a window in the X Window System which emulates
 the actual look of an IBM 3278/3279 terminal, commonly used with
@@ -63,14 +65,14 @@ eski bilgisayar sistemlerine baðlanmak için gerekebilir.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir}/X11/app-defaults,%{_desktopdir},%{_mandir}/man5}
+install -d $RPM_BUILD_ROOT{%{_appdefsdir},%{_desktopdir},%{_mandir}/man5}
 
 %{__make} install install.man \
 	BINDIR=%{_bindir} \
 	MANDIR=%{_mandir} \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install X3270.xad $RPM_BUILD_ROOT%{_libdir}/X11/app-defaults/X3270
+install X3270.xad $RPM_BUILD_ROOT%{_appdefsdir}/X3270
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
@@ -92,9 +94,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/x3270if
 %attr(755,root,root) %{_bindir}/pr3287
 %dir %{_sysconfdir}/x3270
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/x3270/ibm_hosts
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/x3270/ibm_hosts
 %{_desktopdir}/%{name}.desktop
-%config %{_libdir}/X11/app-defaults/X3270
+%{_appdefsdir}/X3270
 %{_fontsdir}/misc/3270*.pcf.gz
 #%{_mandir}/man1/x3270.1*
 %{_mandir}/man?/*
