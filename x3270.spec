@@ -9,16 +9,18 @@ Summary(tr):	X tabanlı 3270 öykünümcüsü
 Summary(uk):	åÍÕÌÑÔÏÒ ÔÅÒÍ¦ÎÁÌÕ IBM 3278/3279 ÄÌÑ X Window
 Summary(zh_CN):	Ò»¸öÄ£Äâ IBM 3278/3279 ÖÕ¶ËµÄ X ´°¿ÚÏµÍ³.£
 Name:		x3270
-Version:	3.3.3b2
+Version:	3.3.4p4
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://x3270.bgp.nu/download/%{name}-%{fversion}.tgz
-# Source0-md5:	b991b7352ae4f6b4004c85fc1c0db47f
+# Source0-md5:	b90409b190380489f75fea231e8af2d8
 Source1:	%{name}.desktop
+URL:		http://x3270.bgp.nu/
+BuildRequires:	automake
 BuildRequires:	XFree86
 BuildRequires:	XFree86-devel
-Requires(post,postun):/usr/X11R6/bin/mkfontdir
+Requires(post,postun):	/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_appdefsdir	/usr/X11R6/lib/X11/app-defaults
@@ -60,6 +62,8 @@ eski bilgisayar sistemlerine bağlanmak için gerekebilir.
 %setup -q -n %{name}-%{mversion}
 
 %build
+cp -f /usr/share/automake/config.sub .
+cp -f /usr/share/automake/config.sub pr3287
 %configure
 %{__make}
 
