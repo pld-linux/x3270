@@ -7,7 +7,7 @@ Summary(pl):	Emulator terminala IBM 3278/3279 pod X Window System
 Summary(ru):	Эмулятор терминала IBM 3278/3279 для X Window
 Summary(tr):	X tabanlЩ 3270 ЖykЭnЭmcЭsЭ
 Summary(uk):	Емулятор терм╕налу IBM 3278/3279 для X Window
-Summary(zh_CN):	р╩╦ЖдёдБ IBM 3278/3279 жу╤к╣д X ╢╟©зо╣мЁ.ё
+Summary(zh_CN):	р╩╦Ж╩Ысз X ╢╟©зо╣мЁ╣д IBM 3278/3279 жу╤кдёдБфВ║ё
 Name:		x3270
 Version:	3.3.4p4
 Release:	1
@@ -57,6 +57,12 @@ eski bilgisayar sistemlerine baПlanmak iГin gerekebilir.
 Програма x3270 в╕дкрива╓ в╕кно в X Window System, яке емулю╓ вид
 терм╕налу IBM 3278/3279, часто використовуваного в мейнфреймах, ╕
 дозволя╓ "telnet-итися" на хости IBM.
+
+%description -l zh_CN
+x3270 ЁлпРн╙ X ╢╟©зо╣мЁ╢Р©╙р╩╦Ж╢╟©зё╛кЭдёдБ
+╠╩фу╠Ий╧сцтз╢Спм╩ЗфВио╣дЁлпР╣д IBM 3278/3279
+жу╤к╣дмБ╧ш║ёX3270 ╩╧тйпМдЗ╢с x3270 ╢╟©зиот╤Ёл
+╣гб╪╣╫р╩╦Ж IBM жВ╩Зио║ё
 
 %prep
 %setup -q -n %{name}-%{mversion}
