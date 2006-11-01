@@ -1,0 +1,22 @@
+--- x3270-3.3/Imakefile.in~	2005-03-27 02:07:34.000000000 +0200
++++ x3270-3.3/Imakefile.in	2006-11-02 00:42:40.586980010 +0200
+@@ -148,7 +148,7 @@
+ /* Non-default build rules for certain C modules. */
+ version.o: $(VOBJS) version.txt mkversion.sh
+ 	@chmod +x mkversion.sh version.txt
+-	sh ./mkversion.sh $(CC)
++	sh ./mkversion.sh "$(CC)"
+ 
+ fallbacks.c: mkfb X3270.xad
+ 	$(RM) $@
+--- x3270-3.3/pr3287/Makefile.in~	2005-01-01 00:50:57.000000000 +0200
++++ x3270-3.3/pr3287/Makefile.in	2006-11-02 00:44:45.309785973 +0200
+@@ -38,7 +38,7 @@
+ 
+ version.o: version.txt mkversion.sh
+ 	@chmod +x mkversion.sh version.txt
+-	sh ./mkversion.sh $(CC) pr3287
++	sh ./mkversion.sh "$(CC)" pr3287
+ 
+ pr3287: $(OBJECTS) version.o
+ 	$(CC) -o $@ $(OBJECTS) version.o $(LDFLAGS) $(LIBS)
