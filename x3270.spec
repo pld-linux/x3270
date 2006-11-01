@@ -10,7 +10,7 @@ Summary(uk):	Емулятор терм╕налу IBM 3278/3279 для X Window
 Summary(zh_CN):	р╩╦Ж╩Ысз X ╢╟©зо╣мЁ╣д IBM 3278/3279 жу╤кдёдБфВ║ё
 Name:		x3270
 Version:	3.3.4p4
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Applications
 Source0:	http://x3270.bgp.nu/download/%{name}-%{fversion}.tgz
