@@ -16,10 +16,11 @@ Group:		X11/Applications
 Source0:	http://x3270.bgp.nu/download/%{name}-%{fversion}.tgz
 # Source0-md5:	b90409b190380489f75fea231e8af2d8
 Source1:	%{name}.desktop
+Patch0:	%{name}-cc.patch
 URL:		http://x3270.bgp.nu/
-BuildRequires:	automake
 BuildRequires:	XFree86
 BuildRequires:	XFree86-devel
+BuildRequires:	automake
 Requires(post,postun):	/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -66,6 +67,7 @@ x3270 程序为 X 窗口系统打开一个窗口，它模拟
 
 %prep
 %setup -q -n %{name}-%{mversion}
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
@@ -77,7 +79,7 @@ cp -f /usr/share/automake/config.sub pr3287
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_appdefsdir},%{_desktopdir},%{_mandir}/man5}
 
-%{__make} install install.man \
+%{__make} -j1 install install.man \
 	BINDIR=%{_bindir} \
 	MANDIR=%{_mandir} \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -99,7 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc Docs/*
 %attr(755,root,root) %{_bindir}/x3270
 %attr(755,root,root) %{_bindir}/x3270if
 %attr(755,root,root) %{_bindir}/pr3287
@@ -108,5 +109,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/%{name}.desktop
 %{_appdefsdir}/X3270
 %{_fontsdir}/misc/3270*.pcf.gz
-#%{_mandir}/man1/x3270.1*
 %{_mandir}/man?/*
