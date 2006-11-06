@@ -16,11 +16,12 @@ Group:		X11/Applications
 Source0:	http://x3270.bgp.nu/download/%{name}-%{fversion}.tgz
 # Source0-md5:	b90409b190380489f75fea231e8af2d8
 Source1:	%{name}.desktop
-Patch0:	%{name}-cc.patch
+Patch0:		%{name}-cc.patch
 URL:		http://x3270.bgp.nu/
 BuildRequires:	XFree86
 BuildRequires:	XFree86-devel
 BuildRequires:	automake
+BuildRequires:	icu
 Requires(post,postun):	/usr/X11R6/bin/mkfontdir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
