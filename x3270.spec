@@ -1,13 +1,13 @@
 %define		fversion	%(echo %{version} |tr -d .)
 %define		mversion	%(echo %{version} |cut -f -2 -d .)
 Summary:	An X Window System based IBM 3278/3279 terminal emulator
-Summary(de):	X-basierter 3270-Emulator
-Summary(fr):	Emulateur 3270 pour X
-Summary(pl):	Emulator terminala IBM 3278/3279 pod X Window System
-Summary(ru):	Эмулятор терминала IBM 3278/3279 для X Window
-Summary(tr):	X tabanlЩ 3270 ЖykЭnЭmcЭsЭ
-Summary(uk):	Емулятор терм╕налу IBM 3278/3279 для X Window
-Summary(zh_CN):	р╩╦Ж╩Ысз X ╢╟©зо╣мЁ╣д IBM 3278/3279 жу╤кдёдБфВ║ё
+Summary(de.UTF-8):   X-basierter 3270-Emulator
+Summary(fr.UTF-8):   Emulateur 3270 pour X
+Summary(pl.UTF-8):   Emulator terminala IBM 3278/3279 pod X Window System
+Summary(ru.UTF-8):   п╜п╪я┐п╩я▐я┌п╬я─ я┌п╣я─п╪п╦п╫п╟п╩п╟ IBM 3278/3279 п╢п╩я▐ X Window
+Summary(tr.UTF-8):   X tabanlд╠ 3270 ц╤ykц╪nц╪mcц╪sц╪
+Summary(uk.UTF-8):   п∙п╪я┐п╩я▐я┌п╬я─ я┌п╣я─п╪я√п╫п╟п╩я┐ IBM 3278/3279 п╢п╩я▐ X Window
+Summary(zh_CN.UTF-8):   Д╦─Д╦╙Е÷╨Д╨▌ X Г╙≈Е▐ёГЁ╩Г╩÷Г └ IBM 3278/3279 Г╩┬Г╚╞Ф╗║Ф▀÷Е≥╗Ц─┌
 Name:		x3270
 Version:	3.3.4p4
 Release:	3
@@ -33,38 +33,38 @@ the actual look of an IBM 3278/3279 terminal, commonly used with
 mainframe applications. x3270 also allows you to telnet to an IBM host
 from the x3270 window.
 
-%description -l de
-Dieses Programm emuliert ein IBM 3270-Terminal, das Эblicherweise mit
-Mainframe-Anwendungen in einem X-Fenster ausgefЭhrt wird.
+%description -l de.UTF-8
+Dieses Programm emuliert ein IBM 3270-Terminal, das ц╪blicherweise mit
+Mainframe-Anwendungen in einem X-Fenster ausgefц╪hrt wird.
 
-%description -l fr
-Ce programme Иmule un terminal IBM 3270, couramment utilisИ sous X
-window avec les gros systХmes.
+%description -l fr.UTF-8
+Ce programme ц╘mule un terminal IBM 3270, couramment utilisц╘ sous X
+window avec les gros systц╗mes.
 
-%description -l pl
-Program x3270 otwiera okienko pod X, ktСre emuluje wЁa╤ciwy wygl╠d
-terminala IBM 3278/3279, u©ywanego gЁСwnie z aplikacjami mainframe.
-x3270 pozwala tak©e zatelnetowaФ siЙ na maszynЙ IBM z okienka x3270.
+%description -l pl.UTF-8
+Program x3270 otwiera okienko pod X, ktцЁre emuluje wе┌aе⌡ciwy wyglд┘d
+terminala IBM 3278/3279, uе╪ywanego gе┌цЁwnie z aplikacjami mainframe.
+x3270 pozwala takе╪e zatelnetowaд┤ siд≥ na maszynд≥ IBM z okienka x3270.
 
-%description -l ru
-Программа x3270 открывает окно в X Window System, эмулирующее вид
-терминала IBM 3278/3279, часто используемого в мейнфреймах, и
-позволяющее "telnet-ится" на хосты IBM.
+%description -l ru.UTF-8
+п÷я─п╬пЁя─п╟п╪п╪п╟ x3270 п╬я┌п╨я─я▀п╡п╟п╣я┌ п╬п╨п╫п╬ п╡ X Window System, я█п╪я┐п╩п╦я─я┐я▌я┴п╣п╣ п╡п╦п╢
+я┌п╣я─п╪п╦п╫п╟п╩п╟ IBM 3278/3279, я┤п╟я│я┌п╬ п╦я│п©п╬п╩я▄п╥я┐п╣п╪п╬пЁп╬ п╡ п╪п╣п╧п╫я└я─п╣п╧п╪п╟я┘, п╦
+п©п╬п╥п╡п╬п╩я▐я▌я┴п╣п╣ "telnet-п╦я┌я│я▐" п╫п╟ я┘п╬я│я┌я▀ IBM.
 
-%description -l tr
-Bu program IBM 3270 uГbirim ЖykЭnЭmЭ yapar. IBM 3270 ЖykЭnЭmЭ bazЩ
-eski bilgisayar sistemlerine baПlanmak iГin gerekebilir.
+%description -l tr.UTF-8
+Bu program IBM 3270 uц╖birim ц╤ykц╪nц╪mц╪ yapar. IBM 3270 ц╤ykц╪nц╪mц╪ bazд╠
+eski bilgisayar sistemlerine baд÷lanmak iц╖in gerekebilir.
 
-%description -l uk
-Програма x3270 в╕дкрива╓ в╕кно в X Window System, яке емулю╓ вид
-терм╕налу IBM 3278/3279, часто використовуваного в мейнфреймах, ╕
-дозволя╓ "telnet-итися" на хости IBM.
+%description -l uk.UTF-8
+п÷я─п╬пЁя─п╟п╪п╟ x3270 п╡я√п╢п╨я─п╦п╡п╟я■ п╡я√п╨п╫п╬ п╡ X Window System, я▐п╨п╣ п╣п╪я┐п╩я▌я■ п╡п╦п╢
+я┌п╣я─п╪я√п╫п╟п╩я┐ IBM 3278/3279, я┤п╟я│я┌п╬ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐п╡п╟п╫п╬пЁп╬ п╡ п╪п╣п╧п╫я└я─п╣п╧п╪п╟я┘, я√
+п╢п╬п╥п╡п╬п╩я▐я■ "telnet-п╦я┌п╦я│я▐" п╫п╟ я┘п╬я│я┌п╦ IBM.
 
-%description -l zh_CN
-x3270 ЁлпРн╙ X ╢╟©зо╣мЁ╢Р©╙р╩╦Ж╢╟©зё╛кЭдёдБ
-╠╩фу╠Ий╧сцтз╢Спм╩ЗфВио╣дЁлпР╣д IBM 3278/3279
-жу╤к╣дмБ╧ш║ёX3270 ╩╧тйпМдЗ╢с x3270 ╢╟©зиот╤Ёл
-╣гб╪╣╫р╩╦Ж IBM жВ╩Зио║ё
+%description -l zh_CN.UTF-8
+x3270 Г╗▀Е╨▐Д╦╨ X Г╙≈Е▐ёГЁ╩Г╩÷Ф┴⌠Е╪─Д╦─Д╦╙Г╙≈Е▐ёО╪▄Е╝┐Ф╗║Ф▀÷
+Х╒╚Ф≥╝И│█Д╫©Г■╗Е°╗Е╓╖Е·▀Ф°╨Е≥╗Д╦┼Г └Г╗▀Е╨▐Г └ IBM 3278/3279
+Г╩┬Г╚╞Г └Е╓√Х╖┌Ц─┌X3270 Х©≤Е┘│Х╝╦Ф┌╗Д╩▌ x3270 Г╙≈Е▐ёД╦┼Х©°Г╗▀
+Г≥╩Е╫∙Е┬╟Д╦─Д╦╙ IBM Д╦╩Ф°╨Д╦┼Ц─┌
 
 %prep
 %setup -q -n %{name}-%{mversion}
