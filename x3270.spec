@@ -1,13 +1,13 @@
 %define		fversion	%(echo %{version} |tr -d .)
 %define		mversion	%(echo %{version} |cut -f -2 -d .)
 Summary:	An X Window System based IBM 3278/3279 terminal emulator
-Summary(de.UTF-8):   X-basierter 3270-Emulator
-Summary(fr.UTF-8):   Emulateur 3270 pour X
-Summary(pl.UTF-8):   Emulator terminala IBM 3278/3279 pod X Window System
-Summary(ru.UTF-8):   Эмулятор терминала IBM 3278/3279 для X Window
-Summary(tr.UTF-8):   X tabanlı 3270 öykünümcüsü
-Summary(uk.UTF-8):   Емулятор терміналу IBM 3278/3279 для X Window
-Summary(zh_CN.UTF-8):   一个基于 X 窗口系统的 IBM 3278/3279 终端模拟器。
+Summary(de.UTF-8):	X-basierter 3270-Emulator
+Summary(fr.UTF-8):	Emulateur 3270 pour X
+Summary(pl.UTF-8):	Emulator terminala IBM 3278/3279 pod X Window System
+Summary(ru.UTF-8):	Эмулятор терминала IBM 3278/3279 для X Window
+Summary(tr.UTF-8):	X tabanlı 3270 öykünümcüsü
+Summary(uk.UTF-8):	Емулятор терміналу IBM 3278/3279 для X Window
+Summary(zh_CN.UTF-8):	一个基于 X 窗口系统的 IBM 3278/3279 终端模拟器。
 Name:		x3270
 Version:	3.3.4p4
 Release:	3
