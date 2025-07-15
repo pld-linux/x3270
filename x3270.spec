@@ -68,7 +68,7 @@ x3270 程序为 X 窗口系统打开一个窗口，它模拟
 
 %prep
 %setup -q -n %{name}-%{mversion}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
